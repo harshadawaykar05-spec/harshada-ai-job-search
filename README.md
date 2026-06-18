@@ -1,6 +1,6 @@
-# job-hunt-claude-routine-template
+# claude-job-search
 
-A template for a [Claude Code routine](https://code.claude.com/docs/en/routines) — a saved prompt that runs automatically on a schedule — that searches job boards for openings matching your resume and reports back verified matches.
+A [Claude Code routine](https://code.claude.com/docs/en/routines) — a saved prompt that runs automatically on a schedule — that searches job boards for openings matching your resume and reports back verified matches.
 
 ## What the routine does
 

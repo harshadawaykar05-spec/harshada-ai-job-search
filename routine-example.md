@@ -23,10 +23,10 @@ Search for job opportunities matching the user's profile and preferences.
 5. Compile a list of 3–8 top matches with: company name, role title, key fit factors, and application link. Only include a role if you have observed an actual posting for it (see HARD RULE below). Label each match by verification tier:
    - VERIFIED — you opened/confirmed the live posting yourself.
    - SEEN BUT UNVERIFIED — a real posting reference exists but you couldn't open it (e.g., 403/login); cite where you saw it and report only the details you actually observed.
-6. Record and de-duplicate presented roles using a running CSV at `2026-job-hunt/presented-roles.csv` with the columns: Title, Company, URL, Posting Date, Original Find Date.
+6. Record and de-duplicate presented roles using a running CSV at `history/presented-roles.csv` with the columns: Title, Company, URL, Posting Date, Original Find Date.
    - Before finalizing the matches from step 5, load this CSV (create it with a header row if it does not exist) and drop any role that already appears in it — match on Company + Title + URL — so a role is presented at most once across runs.
    - After presenting, append one row per newly presented role. Set Original Find Date to today's date (the date the role is first presented); use the posting's stated date for Posting Date, leaving it blank if none is given.
-   - Commit the updated CSV to the `2026-job-hunt/` folder on the `main` branch. Do NOT create a separate branch.
+   - Commit the updated CSV to the `history/` folder on the `main` branch. Do NOT create a separate branch.
 7. Flag any roles that seem like unusually strong matches (e.g., recent skill alignment, explicit mention of the user's background).
 
 If no promising matches are found, report what you searched and note any gaps. Reporting "no confirmed matches found" is a valid and correct outcome.

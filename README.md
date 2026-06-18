@@ -11,7 +11,7 @@ A [Claude Code routine](https://code.claude.com/docs/en/routines) — a saved pr
 3. Drop postings that violate your hard constraints (location, work authorization, compensation floor, company stage).
 4. Assess fit and interview likelihood for each remaining candidate, using per-title prioritization rules you define (e.g. "prioritize well-funded companies" for one title, "strongly prefer established companies" for another).
 5. Compile 3–8 top matches (company, role, fit factors, application link), each labeled **VERIFIED** or **SEEN BUT UNVERIFIED**.
-6. Record presented roles to a running CSV (`2026-job-hunt/presented-roles.csv`) and use it to filter out roles already surfaced on earlier runs, then commit the updated CSV to `main`.
+6. Record presented roles to a running CSV (`history/presented-roles.csv`) and use it to filter out roles already surfaced on earlier runs, then commit the updated CSV to `main`.
 7. Apply a hard rule against fabricating postings — if nothing solid turns up, the routine reports that honestly instead of inventing roles.
 
 Because the routine commits the de-dup CSV to `main`, the routine needs permission to push to that branch — see the note in step 4.
@@ -23,7 +23,7 @@ Because the routine needs to browse live job postings across many external sites
 - **`routine.md`** — the prompt template. It owns the search direction: which titles to look for, hard constraints, per-title priorities, and the anti-fabrication rules. This is the file you paste into the routine.
 - **`routine-example.md`** — a filled-in version of `routine.md` for the example resume, so you can see how the placeholders map to a real candidate. For reference only; you don't paste this one.
 - **`resume.md`** — a plain-Markdown example resume the routine reads each run. Replace it with your own.
-- **`2026-job-hunt/presented-roles.csv`** — the running log of every role the routine has presented. It ships with just a header row; the routine appends to it each run and uses it to avoid surfacing the same role twice.
+- **`history/presented-roles.csv`** — the running log of every role the routine has presented. It ships with just a header row; the routine appends to it each run and uses it to avoid surfacing the same role twice.
 
 ## 1. Fill in the routine prompt
 

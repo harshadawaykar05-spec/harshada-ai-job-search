@@ -1,16 +1,22 @@
 
 Search for job opportunities matching the user's profile and preferences.
 
-1. Review the user's resume from the provided Google Drive link: <insert Google drive link here>
-2. Search multiple job boards and sources (LinkedIn, AngelList, Crunchbase, company career pages, industry networks) for open roles in: <Job Title 1>, <Job Title 2>, and <Job Title 3> positions.
-3. For each candidate role, assess fit against the resume and likelihood of interview:
+1. Review the user's resume in `resume.md` at the root of this repository to understand their background, skills, and experience.
+2. Search multiple job boards and sources (LinkedIn, AngelList, Crunchbase, company career pages, industry networks) for open roles in these target titles: <Job Title 1>, <Job Title 2>, and <Job Title 3>.
+3. Apply the following hard constraints and drop any posting that violates one of them:
+   - Location: <location and/or remote requirements>
+   - Work authorization: <e.g., US citizen — no visa sponsorship needed>
+   - Compensation floor: <minimum acceptable total compensation>
+   - Company stage: <e.g., Series B or later, or publicly traded>
+4. For each remaining role, assess fit against the resume and likelihood of interview, applying these per-title priorities:
    - <Job Title 1>: prioritize any company stage and quality of fit.
    - <Job Title 2>: prioritize well-known or well-funded companies.
    - <Job Title 3>: strongly prioritize recognizable, established companies.
-4. Compile a list of 3–8 top matches with: company name, role title, key fit factors, and application link. Only include a role if you have observed an actual posting for it (see HARD RULE below). Label each match by verification tier:
+   Use these soft preferences only to break ties, never to exclude: <soft preferences, e.g., industry focus or team culture>.
+5. Compile a list of 3–8 top matches with: company name, role title, key fit factors, and application link. Only include a role if you have observed an actual posting for it (see HARD RULE below). Label each match by verification tier:
    - VERIFIED — you opened/confirmed the live posting yourself.
    - SEEN BUT UNVERIFIED — a real posting reference exists but you couldn't open it (e.g., 403/login); cite where you saw it and report only the details you actually observed.
-5. Flag any roles that seem like unusually strong matches (e.g., recent skill alignment, explicit mention of the user's background).
+6. Flag any roles that seem like unusually strong matches (e.g., recent skill alignment, explicit mention of the user's background).
 
 If no promising matches are found, report what you searched and note any gaps. Reporting "no confirmed matches found" is a valid and correct outcome.
 

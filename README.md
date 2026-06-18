@@ -11,7 +11,10 @@ A template for a [Claude Code routine](https://code.claude.com/docs/en/routines)
 3. Drop postings that violate your hard constraints (location, work authorization, compensation floor, company stage).
 4. Assess fit and interview likelihood for each remaining candidate, using per-title prioritization rules you define (e.g. "prioritize well-funded companies" for one title, "strongly prefer established companies" for another).
 5. Compile 3–8 top matches (company, role, fit factors, application link), each labeled **VERIFIED** or **SEEN BUT UNVERIFIED**.
-6. Apply a hard rule against fabricating postings — if nothing solid turns up, the routine reports that honestly instead of inventing roles.
+6. Record presented roles to a running CSV (`2026-job-hunt/presented-roles.csv`) and use it to filter out roles already surfaced on earlier runs, then commit the updated CSV to `main`.
+7. Apply a hard rule against fabricating postings — if nothing solid turns up, the routine reports that honestly instead of inventing roles.
+
+Because the routine commits the de-dup CSV to `main`, the routine needs permission to push to that branch — see the note in step 4.
 
 Because the routine needs to browse live job postings across many external sites, it must run in a cloud environment with **full internet access** (see step 3 below).
 
@@ -20,6 +23,7 @@ Because the routine needs to browse live job postings across many external sites
 - **`routine.md`** — the prompt template. It owns the search direction: which titles to look for, hard constraints, per-title priorities, and the anti-fabrication rules. This is the file you paste into the routine.
 - **`routine-example.md`** — a filled-in version of `routine.md` for the example resume, so you can see how the placeholders map to a real candidate. For reference only; you don't paste this one.
 - **`resume.md`** — a plain-Markdown example resume the routine reads each run. Replace it with your own.
+- **`2026-job-hunt/presented-roles.csv`** — the running log of every role the routine has presented. It ships with just a header row; the routine appends to it each run and uses it to avoid surfacing the same role twice.
 
 ## 1. Fill in the routine prompt
 
@@ -76,6 +80,7 @@ Job boards, ATSs (Greenhouse/Lever/Ashby), and career pages span far too many do
    - **Repositories**: add this repo — required for Option A so Claude can read `resume.md`; also required for Option B if you want Claude to be able to read the repo at all (otherwise it has no working directory)
    - **Environment**: select the `Job Hunt (Full Internet)` environment from step 3
    - **Connectors**: include the Google Drive connector here if you're using it for Option B with a private file; otherwise remove connectors you don't need
+   - **Permissions**: enable **Allow unrestricted branch pushes** for this repo. The routine commits the de-dup CSV to `main`, and without this setting routines can only push to `claude/`-prefixed branches
    - **Trigger**: choose **Schedule** and pick a cadence (e.g. daily on weekday mornings)
 3. Click **Create**, then **Run now** on the routine's detail page to do a first test run.
 

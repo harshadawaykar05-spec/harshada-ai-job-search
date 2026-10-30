@@ -1,4 +1,4 @@
-<!-- EXAMPLE RESUME — replace with a Markdown version of your own resume. -->
+<!-- EXAMPLE RESUME — replace with a Markdown version of your own resume. -->.  
 
 HARSHADA SADANAND WAYKAR
 Python Full-Stack Developer | Django · Next.js · LLM Integration
